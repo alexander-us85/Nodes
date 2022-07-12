@@ -85,8 +85,10 @@ class QDMGraphicsView(QGraphicsView):
             self.zoom -= self.zoom_step
 
         clamped = False
-        if self.zoom < self.zoom_range[0]: self.zoom, clamped = self.zoom_range[0], True
-        if self.zoom > self.zoom_range[1]: self.zoom, clamped = self.zoom_range[1], True
+        if self.zoom < self.zoom_range[0]:
+            self.zoom, clamped = self.zoom_range[0], True
+        if self.zoom > self.zoom_range[1]:
+            self.zoom, clamped = self.zoom_range[1], True
 
         if not clamped or self.zoom_clamp is False:
             self.scale(zoom_factor, zoom_factor)
